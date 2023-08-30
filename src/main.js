@@ -68,7 +68,6 @@ btnBuscar.addEventListener('click', () => {
   }
 });
 
-
 const btnCalculo = document.querySelector('#Calculo');
 const calculoContainer = document.getElementById("calculoContainer");
 btnCalculo.addEventListener('click', () => {
