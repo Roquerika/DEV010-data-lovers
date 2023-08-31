@@ -1,46 +1,86 @@
-import { example } from './data.js';
-// import data from './data/lol/lol.js';
 import data from './data/breakingbad/breakingbad.js';
-// import data from './data/rickandmorty/rickandmorty.js';
+import { ordenarAZ, ordenarZA, temporada, filtrar } from './data.js';
 
-/*console.log(example, data);
+function getData(data) {
 
-const divRoot = document.getElementById('root');
-const arr = ["KABCDEFGHIJKLMNOPQ","L","F"];
-function draw(){
-  let contentRoot="";
-  for (let i=0; i<arr.length;i++){
-    contentRoot+=`<p>${arr[i]}</p>`
-  }
-  console.log({contentRoot})
-  divRoot.innerHTML=contentRoot;
+  const main = document.querySelector('main')
+  main.innerHTML = ''
+
+  data.forEach(p => {
+    /*Codigo para crear la tarjeta*/
+    const characterCard = document.createElement('div')
+    
+    characterCard.className = "character-card"
+    const img = document.createElement('img')
+    img.src = p.img
+    const titulo = document.createElement('h3')
+    titulo.textContent = p.name
+    characterCard.append(img, titulo)
+    main.append(characterCard)
+    return data.map(p=>({name:p.name, img:p.img}))
+  });
 }
-draw()*/
+// const characterArray = Object.values(data.breaking_bad);
+// getData(characterArray);
+// console.log(data.breaking_bad);
+getData(data.breaking_bad) 
 
-// Array.prototype.forEach()
+const btnOrdenarAZ = document.querySelector('#btnOrdenarAZ');
+btnOrdenarAZ.addEventListener("click", ()=>{
+// llamar
+//  console.log(ordenarAZ);
+// invocacion
+// console.log(ordenarAZ(data.breaking_bad))
+  const ejecutarOrdenarAZ = ordenarAZ(data.breaking_bad)
+  getData(ejecutarOrdenarAZ)
+}); 
 
-/*const dataFilms = {
+const btnOrdenarZA = document.querySelector('#btnOrdenarZA');
+btnOrdenarZA.addEventListener("click", ()=>{
+  const ejecutarOrdenarZA = ordenarZA(data.breaking_bad)
+  getData(ejecutarOrdenarZA)
+}); 
 
-};*/
+const selectorTemporada= document.querySelector('#selectorTemporada');
+selectorTemporada.addEventListener("change", ()=>{
+  const ejecutarFiltarTemporada = temporada(data.breaking_bad, selectorTemporada.value)
+  getData(ejecutarFiltarTemporada)
+});
 
-const searchName = 'Walter White';
-const foundName = data.breaking_bad.find((name)=> name.breaking_bad===searchName);
-/*console.log(foundName); //Revisar para activar el buscador*/
+const btnBuscar = document.querySelector('#buscar');
+const busquedaPersonaje = document.querySelector('#busquedaPersonaje');
+const resultado = document.querySelector('#resultado');
 
-function printdata(array){
-    const container = document.querySelector('.character-card')
-    for(let i=0 ; i<array.length; i++){
-       // console.log(data.array[i]);
-        container.innerHTML += `<figure>
-        <img
-        src="${array[i].img}"
-        alt="${array[i].name}"
-        />
-        <figcaption>"${array[i].name}"</figcaption>
-        </figure>` //template String (envío elementos de HTML como si fuesen de JS)
+btnBuscar.addEventListener('click', () => {
+  const valorBusqueda = busquedaPersonaje.value.trim();
+  resultado.textContent = '';
+  
+  if (valorBusqueda === '') {
+    resultado.style.display='block';
+  } else {
+    const ejecutarFiltrar = filtrar(data.breaking_bad, busquedaPersonaje.value);
+
+    if (ejecutarFiltrar.length > 0) {
+      getData(ejecutarFiltrar);
+    } else {
+      resultado.style.display='block';
     }
+  }
 }
-printdata(data.breaking_bad)
+);
 
-//Cuando tenga el buscador le puedo enviar foundName a print data para reutilizar el código, el bucle for repite una acción y la función nos permite reutilizar.
 
+const btnCalculo = document.querySelector('#Calculo');
+const calculoContainer = document.getElementById("calculoContainer");
+btnCalculo.addEventListener('click', () => {
+  if (calculoContainer.style.display === "none" || calculoContainer.style.display === "") {
+    calculoContainer.style.display = "block";
+  } else {
+    calculoContainer.style.display = "none";
+  }
+});
+
+function PlayAudio() {
+  document.getElementById("cancionBreakingBad").play();
+}
+PlayAudio(); // Llama a la función para reproducir el audio automáticamente

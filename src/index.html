@@ -5,29 +5,69 @@
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body onclick="PlayAudio()">
+ 
     <header>
-      <!--<img src="https://shop.amc.com/cdn/shop/collections/BreakingBad-Collection_Banner-1920x814-Option2.jpg?v=1639766741" alt="Logo Breaking Bad" width="100"
-      height="200" border=5>-->
+      <img src="https://content.cpcache.com/popup/img/breakingbad-large-logo.png" alt="Logo Breaking Bad" width="600"
+      height="110">
+      <h1><b><em>"Let´s Cook"</em></b></h1>
       </header>
 
     <nav>
       <div>
-        <select>
-  
-        </select>
+
+      <button id="btnOrdenarAZ">Ordenar A-Z</button>
+      <button id="btnOrdenarZA">Ordenar Z-A</button>
+
+        <label class="selector" for="selectorTemporada">Selecciona temporada</label>   
+        <select id="selectorTemporada">
+             <option value="1" id="temp1">Temporada 1</option>
+             <option value="2" id="temp2">Temporada 2</option>
+             <option value="3" id="temp3">Temporada 3</option>
+             <option value="4" id="temp4">Temporada 4</option>
+             <option value="4" id="temp5">Temporada 5</option>
+             <!--<option value="6" id="todasTemp">Todas las temporadas</option>-->
+           </select>
+           
+      <input type="text" class="Personaje" placeholder="Buscador Personaje / Actor / Actriz" id="busquedaPersonaje">  
+      <button class="btnBuscar" id="buscar">Buscar</button>
+      <button id="Calculo">¿Cuál personaje serías?</button>
+
+      <audio id= "cancionBreakingBad" controls loop>
+        <source src="audio/Canción.mp3" type="audio/mpeg">
+      </audio>
+      
+      <div id="calculoContainer" class="calculoContainer">
+        <h2><b><em>¿Cuál personaje serías?</em></b></h2>
+        <ul style="list-style: none;">
+        <li><label class= "nombre" for="nombre"><b>Introduce tu nombre</b></label></li>
+        <input type="text" class="Nombre" placeholder="" id="Nombre">
+        <br>
+        <li><label class= "edad" for="edad"><b>Introduce tu edad</b></label></li>
+        <input type="text" class="Edad" placeholder="" id="Edad">
+        <br>
+        <li><label class= "elemento" for="elemento"><b>Introduce tu elemento químico favorito</b></label></li>
+        <input type="text" class="Elemento" placeholder="" id="Elemento">
+        <br>
+        <button class="btnProcesar" id="procesar">Procesar</button>
+      </ul>
+      </div>
+      <div>
+        <img>
+      </div>
+
+      <div id="resultado" class="resultado"></div>
+
+      <!-- <input type="checkbox" class="checkbox" name="BetterCall"><span>Aparecen en Better Call Saul</span>
+      <div id="resultado"></div> -->
       </div>     
     </nav>
 
     <main>
-      <div class="card-container">
-        <div class="character-card"></div>
 
-      </div>
+      <!--<div class="card-container">-->
+    <div id="error-container">
     </main>
-
-
-
 
 
     <div id="root"></div>
