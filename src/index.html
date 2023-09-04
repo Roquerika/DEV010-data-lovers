@@ -5,8 +5,8 @@
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body onclick="PlayAudio()">
- 
+  <!-- <body onclick="PlayAudio()"> -->
+ <body>
     <header>
       <img src="https://content.cpcache.com/popup/img/breakingbad-large-logo.png" alt="Logo Breaking Bad" width="600"
       height="110">
@@ -41,15 +41,21 @@
         <h2><b><em>¿Cuál personaje serías?</em></b></h2>
         <ul style="list-style: none;">
         <li><label class= "nombre" for="nombre"><b>Introduce tu nombre</b></label></li>
-        <input type="text" class="Nombre" placeholder="" id="Nombre">
+        <input type="text" class="NombreCalculo" placeholder="" id="Nombre">
         <br>
-        <li><label class= "edad" for="edad"><b>Introduce tu edad</b></label></li>
-        <input type="text" class="Edad" placeholder="" id="Edad">
+        <li><label class= "signo" for="signo"><b>Signo zodiacal</b></label></li>
+        <input type="text" class="SignoCalculo" placeholder="" id="Signo">
         <br>
         <li><label class= "elemento" for="elemento"><b>Introduce tu elemento químico favorito</b></label></li>
-        <input type="text" class="Elemento" placeholder="" id="Elemento">
+        <input type="text" class="ElementoCalculo" placeholder="" id="Elemento">
         <br>
         <button class="btnProcesar" id="procesar">Procesar</button>
+        <div id="cartaContainer">
+        <h2><em>Carta seleccionada:</em></h2>
+        <div id="cartaInfo">
+            <!-- Aquí se mostrarán los detalles de la carta -->
+        </div>
+        </div>
       </ul>
       </div>
       <div>

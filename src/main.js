@@ -1,5 +1,5 @@
 import data from './data/breakingbad/breakingbad.js';
-import { ordenarAZ, ordenarZA, temporada, filtrar } from './data.js';
+import { ordenarAZ, ordenarZA, temporada, filtrar, textoAASCII, encontrar } from './data.js';
 
 function getData(data) {
 
@@ -69,7 +69,6 @@ btnBuscar.addEventListener('click', () => {
 }
 );
 
-
 const btnCalculo = document.querySelector('#Calculo');
 const calculoContainer = document.getElementById("calculoContainer");
 btnCalculo.addEventListener('click', () => {
@@ -80,7 +79,29 @@ btnCalculo.addEventListener('click', () => {
   }
 });
 
-function PlayAudio() {
-  document.getElementById("cancionBreakingBad").play();
-}
-PlayAudio(); // Llama a la función para reproducir el audio automáticamente
+document.getElementById('procesar').addEventListener('click', function(event) {
+  event.preventDefault(); // Evita que se envíe el formulario automáticamente
+  const nombre = document.getElementById('Nombre').value;
+  const signo = document.getElementById('Signo').value;
+  const elemento = document.getElementById('Elemento').value;
+  // Procesa los datos o envíalos al servidor
+
+  const nombreASCII = textoAASCII(nombre);
+  const elementoASCII = textoAASCII(elemento);
+  const signoASCII = textoAASCII(signo);
+
+  const promedioASCII = parseInt((nombreASCII.reduce((a, b) => a + b, 0) + signoASCII.reduce((a, b) => a + b, 0) + elementoASCII.reduce((a, b) => a + b, 0)) / 3);
+  console.log(promedioASCII);
+});
+
+const btnProcesar = document.querySelector('#procesar');
+btnProcesar.addEventListener("click", ()=>{
+  const ejecutarEncontrar = encontrar(data.breaking_bad);
+  console.log(ejecutarEncontrar);
+  // getData(ejecutarEncontrar)
+});
+
+// function PlayAudio() {
+//   document.getElementById("cancionBreakingBad").play();
+// }
+// PlayAudio(); // Llama a la función para reproducir el audio automáticamente

@@ -106,7 +106,7 @@ main{
     min-width: 40px;
     height: 40px;
     font-size: 1.2rem;
-    background: #2d2a1d92;
+    background: #2d2a1db4;
     color: white;
     }
 
@@ -164,12 +164,13 @@ main{
   color:rgb(64, 15, 25);
 }
 
-.checkbox{
+/* .checkbox{
   cursor: pointer; 
   min-width: 100px;
   height: 30px;
   
-}
+} */
+
 #Calculo{
   font-size:1.2rem; 
   font-weight: bold;
@@ -187,10 +188,13 @@ main{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  background-color: rgba(0,0,0,0.6); /* Black background with opacity */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
   background-image: url("https://hips.hearstapps.com/hmg-prod/images/breaking-bad-resumen-cinco-temporadas-1570700511.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: scroll;
   background-size: cover;
   background-attachment: fixed;
  
@@ -198,23 +202,23 @@ main{
 #calculoContainer > h2{
   color: rgb(64, 15, 25);
   text-align: center;
-  font-size:2.7rem;
+  font-size:2.6rem;
   padding: 10px 10px;
   background-color: #b19e4c92;
   position:static;
   font-weight: bold;
 }
 
-.nombre, .edad, .elemento {
+.nombre, .signo, .elemento {
   margin: 10px;
   color: white;
   font-family: bold;
-  font-size: 1 em;
-  padding: 10px;
+  font-size: 1.3em;
+  padding: 7px;
   display:flex;
-  background-color: #2d2a1d92;
+  background-color: #2d2a1dbe;
   left: 39%;
-  max-width: 30%;
+  max-width: 20%;
   position: relative;
   align-items: center;
   text-align: center;
@@ -222,7 +226,7 @@ main{
   box-shadow: 5px 5px 5px rgb(253, 252, 252);
 }
 
-.Nombre, .Edad, .Elemento {
+.NombreCalculo, .SignoCalculo, .ElementoCalculo {
    
   display: flex;
   font-family: bold;
@@ -232,7 +236,7 @@ main{
   border: 3.5px solid #0c663f;
   border-radius: 10px;
   max-width: 30%;
-  left: 40%;
+  left: 39%;
   align-items: center;
   text-align: center;
   margin: 10px;
