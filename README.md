@@ -41,38 +41,69 @@ Acordamos trabajar con Trello para llevar a cabo la organización del proyecto:
 
 Inicialmente realizamos un bosquejo genérico de la interfaz del proyecto:
 
-Problema uno: La usabilidad aún no estab definida, sin embargo un problema presentado era el fondo de trabajo ya que era muy oscuro y presentaba problemas de integración de colores, por tanto nos recomendaron seguir una paleta de colores y encontrar un fondo más claro.
+##### Problema uno: 
+La usabilidad aún no estab definida, sin embargo un problema presentado era el fondo de trabajo ya que era muy oscuro y presentaba problemas de integración de colores, por tanto nos recomendaron seguir una paleta de colores y encontrar un fondo más claro.
 
-solución: se cambió el fondo y se buscó una paleta de colores para trabajar.
+##### solución: 
+se cambió el fondo y se buscó una paleta de colores para trabajar.
 
-Problema dos: Posteriormente el fondo de la interfaz quedó fijado conjunto al título como una imagen, en este punto el fondo no era problema pues sus colores eran más armónicos y llamativos, pero el título como parte del fondo presentaba un inconveniente a la hora de desplazar las imágenes a través de la página, ya que en un punto cubrían el título, a su vez nos indicaron que las imágenes representadas en tarjetas tenían colores que de alguna manera hacían ruido visual con el fondo.
 
-solución: Para corregir las imágenes se empleó la propiedad filter en CSS con una escala de grises al 80%.
- El título se eliminó de la imagen fondo y se colocó como imagen desde un URL en el header en index.HTML
+##### Problema dos:
+Posteriormente el fondo de la interfaz quedó fijado conjunto al título como una imagen, en este punto el fondo no era problema pues sus colores eran más armónicos y llamativos, pero el título como parte del fondo presentaba un inconveniente a la hora de desplazar las imágenes a través de la página, ya que en un punto cubrían el título, a su vez nos indicaron que las imágenes representadas en tarjetas tenían colores que de alguna manera hacían ruido visual con el fondo.
 
-Problema tres: En otra demostración la página era un poco más funcional, se podía ordenar de A a Z y a la inversa los datos de Json, también se podía filtrar por temporadas, teníamos dos filtros más, uno por actor o actriz y uno por apodo o perspnaje que aún no eran funcionales. En este punto nos indcaron que eran muchos filtros y por tanto podíamos unir estos dos últimos que áun no tenían funcionlidad en un buscador tipo input.
+##### solución: 
+Para corregir las imágenes se empleó la propiedad filter en CSS con una escala de grises al 80%.
+El título se eliminó de la imagen fondo y se colocó como imagen desde un URL en el header en index.HTML.
 
-Solución: eliminamos los filtros (actor/actriz), (personaje/apodo) y creamos un buscador con accesibilidad para personaje, actor, actriz y apodo.
 
-Problema cuatro: En la interfaz al usar el buscador de forma incorrecta, es decir ingresar un dato inálido o pulsar buscar dejando el input vacío se generaba un alert que indicaba error, en este sentido nos indicaron que era muy pequeño y nos recomendaron un mensaje quizás a modo de pantalla que se activara en estos casos.
+##### Problema tres: 
+En otra demostración la página era un poco más funcional, se podía ordenar de A a Z y a la inversa los datos de Json, también se podía filtrar por temporadas, teníamos dos filtros más, uno por actor o actriz y uno por apodo o perspnaje que aún no eran funcionales. En este punto nos indcaron que eran muchos filtros y por tanto podíamos unir estos dos últimos que áun no tenían funcionlidad en un buscador tipo input.
 
-Solución: Se creó una imagen que alertara sobre un ingreso incorrecto y sobre el input vacío y se gestionó como una superposición al interfaz original.
+##### Solución: 
+Eliminamos los filtros (actor/actriz), (personaje/apodo) y creamos un buscador con accesibilidad para personaje, actor, actriz y apodo.
 
-Problema cinco: No teníamos un cálculo con los datos de Json ni como acceder a ese cálculo, nos recomendaron emplear un botón.
 
-Solución: Se creó un botón que tendría la finalidad de llevar al usuario a otra pantalla que también estaría superpuesta a la interfaz original y donde se vería otra imagen alusiva a la serie y algunos cuadros de ingreso de texto asociados al cálculo, a esta altura del proyecto entre las diversas opciones de manipular los datos del Json para realizar un cálculo con ellos, el que más nos hizo sentido fue emplear el método math.random() sin embargo ya habíamos creado la pantalla dónde solicitábamos al usuario ingresar sus datos (nombre, signo zodiacal y elemento químico favorito) y a nivel de código transformabamos estos datos en ASCII y teníamos un promedio, pero ya que no logramos vincular esta información con los datos de Json a manera de que se generará una carta aleatoria, decidimos que el botón procesar además de obtener el promedio antes mencionado, ejecutará el método math.random() en conjunto de math.floor para que el valor final fuese entero y correspondiera a los datos de Json.
+##### Problema cuatro: 
+En la interfaz al usar el buscador de forma incorrecta, es decir ingresar un dato inálido o pulsar buscar dejando el input vacío se generaba un alert que indicaba error, en este sentido nos indicaron que era muy pequeño y nos recomendaron un mensaje quizás a modo de pantalla que se activara en estos casos.
 
-Problema seis: La tarjeta aleatoria no se mostraba en la interfaz asociada a cálculo. Nos recomendaron colocar display:none en Js a la interfaz de cálculo.
-Solución: como la interfaz de cálculo es una superposición de imágenes respecto a la interfaz original pero al generar la tarjeta aleatoria se está ultilizando la función que accede a los datos de Json vinculada a el main incial, la tarjeta aleatoria se mostraba aquí, por tanto añadimos display:none en la función de Js de la interfaz de cálculo justo antes de que se ejecutara la generación de la carta aleatoria.
+##### Solución: 
+Se creó una imagen que alertara sobre un ingreso incorrecto y sobre el input vacío y se gestionó como una superposición al interfaz original.
 
-Problema siete: La página tiene datos de los personajes en inglés pero los botones de accesibilidad están español.
-Solución: Decidimos pasar todos los botones e información general de la interfaz que estaba en español a inglés.
 
-Problema ocho: La carta aleatoria debería estar centrada.
+##### Problema cinco: 
+No teníamos un cálculo con los datos de Json ni como acceder a ese cálculo, nos recomendaron emplear un botón.
+
+##### Solución: 
+Se creó un botón que tendría la finalidad de llevar al usuario a otra pantalla que también estaría superpuesta a la interfaz original y donde se vería otra imagen alusiva a la serie y algunos cuadros de ingreso de texto asociados al cálculo, a esta altura del proyecto entre las diversas opciones de manipular los datos del Json para realizar un cálculo con ellos, el que más nos hizo sentido fue emplear el método math.random() sin embargo ya habíamos creado la pantalla dónde solicitábamos al usuario ingresar sus datos (nombre, signo zodiacal y elemento químico favorito) y a nivel de código transformabamos estos datos en ASCII y teníamos un promedio, pero ya que no logramos vincular esta información con los datos de Json a manera de que se generará una carta aleatoria, decidimos que el botón procesar además de obtener el promedio antes mencionado, ejecutará el método math.random() en conjunto de math.floor para que el valor final fuese entero y correspondiera a los datos de Json.
+
+
+##### Problema seis: 
+La tarjeta aleatoria no se mostraba en la interfaz asociada a cálculo. Nos recomendaron colocar display:none en Js a la interfaz de cálculo.
+
+##### Solución: 
+Como la interfaz de cálculo es una superposición de imágenes respecto a la interfaz original pero al generar la tarjeta aleatoria se está ultilizando la función que accede a los datos de Json vinculada a el main incial, la tarjeta aleatoria se mostraba aquí, por tanto añadimos display:none en la función de Js de la interfaz de cálculo justo antes de que se ejecutara la generación de la carta aleatoria.
+
+
+##### Problema siete: 
+La página tiene datos de los personajes en inglés pero los botones de accesibilidad están español.
+
+##### Solución: 
+Decidimos pasar todos los botones e información general de la interfaz que estaba en español a inglés.
+
+
+##### Problema ocho: 
+La carta aleatoria debería estar centrada.
+
+##### Solución:
 No encontramos solución, probámos variar propiedades y atributos en CSS para resolverlo pero al momento de culminar el proyecto no lo habíamos logrado.
 
-Problema nueve:  Los subtítulos de los datos no se observan.
+
+##### Problema nueve:  
+Los subtítulos de los datos no se observan.
+
+##### Solución:
 No encontramos solución, debido a la forma a la que accedemos a los datos de Json y como logramos mostrarlos en la interfaz, desconocemos como agregar los subtítulos, en el punto de finalizar el proyecto lo más que se nos ha ocurrido es modificar los datos en Json para que contengan tales valores, pero reconocemos que no es práctico y por tanto no es una forma correcta de trabajar.
+
 
 
 Se definieron las historias de usuario,
