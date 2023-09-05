@@ -1,76 +1,94 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-    body{
-    background-image: url("Image/Fondo2.png");
-    background-size: 2150px;
-    background-attachment: fixed;
-    overflow: scroll; 
-    /*Buscar background-attachment o scroll para dejar fijo el fondo y desplazar solo las imágenes*/
-    
+body {
+  background-image: url("Image/Fondo2.png");
+  background-size: 2150px;
+  background-attachment: fixed;
+  overflow: scroll;
+  /*Buscar background-attachment o scroll para dejar fijo el fondo y desplazar solo las imágenes*/
 }
 
 header {
-    padding:100px;
-    text-align: center;
-    color: white;
-    font-size: 2rem;
+  padding: 100px;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
 }
 
-nav{ 
-text-align: center;
-margin: 0;
-}
-
-
-main{
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap:60px;
-    padding: 60px;
-    position: center;
+nav {
+  text-align: center;
+  margin: 0;
 }
 
 
-.character-card{
-    width: 100%;
-    border-radius: 5px;
-    border: 2px solid #043b1f;
-    box-shadow: 10px 10px 10px rgb(0, 0, 0);
-    background-color: azure;
-  
-} 
-
-.character-card > img{
-    width: 100%;
-    height: 90% ; 
-    filter:grayscale(80%);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid #0c663f;
-    
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 60px;
+  padding: 60px;
+  position: center;
 }
-.character-card > img:hover{
-  filter:none;
+
+
+.character-card {
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid #043b1f;
+  box-shadow: 10px 10px 10px rgb(0, 0, 0);
+  background-color: azure;
+  position: relative;
+}
+
+.character-card>img {
+  width: 100%;
+  height: 90%;
+  filter: grayscale(80%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid #0c663f;
+}
+
+.character-card:hover .caracteristicas{
+  display: block;
+}
+
+.character-card>img:hover {
+  filter: none;
   border: 3px solid #0c663f;
-
+  width: 100%;
+  height: 70%;
 }
 
-
-.character-card > h3{
-    color: rgb(64, 15, 25);
-    text-align: center;
-    font-size:1.5rem;
-    padding: 2px 2px;
-    background-color: #f7f3e2;
-    position:static;
-    font-weight: bold;
+.caracteristicas {
+  display: none;
+  position: relative;
+  top: 5%;
+  left: 0;
+  right: 0;
+  /* transform: translateY(-50%); */
+  color: rgb(64, 15, 25);
+  text-align: center;
+  font-size: 1rem;
+  padding: 1px 0 0 0;
+  background-color: azure;
+  font-weight: bold;
 }
 
-  button{
+.character-card>h3 {
+  color: rgb(64, 15, 25);
+  text-align: center;
+  font-size: 1.3rem;
+  padding: 2px 2px 2px 2px;
+  background-color: #f7f3e2;
+  position: static;
+  font-weight: bold;
+}
+
+button {
   margin: 0.5em;
   min-width: 130px;
   height: 40px;
@@ -87,30 +105,31 @@ main{
   background: #0d603cbd;
   font-size: 1.2rem;
   box-shadow: 5px 5px 5px rgb(253, 252, 252);
-   }
-   button:hover {
-    background: #fff;
-    color: #0c663f;
-    border: 2px solid #0c663f;
-  }
+}
 
-  .btnBuscar {
+button:hover {
+  background: #fff;
+  color: #0c663f;
+  border: 2px solid #0c663f;
+}
+
+.btnBuscar {
   margin: 0.1em;
   min-width: 40px;
   height: 30px;
   font-size: 1rem;
-  }
+}
 
-  .btnProcesar {
-    margin: 0.1em;
-    min-width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-    background: #2d2a1db4;
-    color: white;
-    }
+.btnProcesar {
+  margin: 0.1em;
+  min-width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  background: #2d2a1db4;
+  color: white;
+}
 
-  .Personaje{
+.Personaje {
   margin: 0.5em;
   min-width: 120px;
   height: 40px;
@@ -127,15 +146,18 @@ main{
   background: #f7f3e2;
   font-size: 1.2rem;
   box-shadow: 5px 5px 5px rgb(3, 54, 10);
-   }
-   .Personaje:hover{
-    border: 2px solid #0c663f;
-    background: transparent;
-  }
+}
 
-  ::placeholder{ color:rgb(64, 15, 25)}
+.Personaje:hover {
+  border: 2px solid #0c663f;
+  background: transparent;
+}
 
-  select{
+::placeholder {
+  color: rgb(64, 15, 25)
+}
+
+select {
   min-width: 130px;
   height: 40px;
   color: #fff;
@@ -150,18 +172,19 @@ main{
   border: 2.5px solid #0c663f;
   color: rgb(7, 57, 31);
   background: transparent;
-  font-size:1.2rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  }
-  select:hover{
-    border: 2px solid #0c663f;
-    background:#f7f3e2;
 }
 
-.selector{
-  font-size:1.4rem; 
+select:hover {
+  border: 2px solid #0c663f;
+  background: #f7f3e2;
+}
+
+.selector {
+  font-size: 1.4rem;
   font-weight: bold;
-  color:rgb(64, 15, 25);
+  color: rgb(64, 15, 25);
 }
 
 /* .checkbox{
@@ -171,51 +194,62 @@ main{
   
 } */
 
-#Calculo{
-  font-size:1.2rem; 
+#Calculo {
+  font-size: 1.2rem;
   font-weight: bold;
-  color:#f7f3e2;
+  color: #f7f3e2;
   background: rgba(7, 57, 13, 0.6);
   padding: 5px 10px;
   border-radius: 5px;
 }
+
 #calculoContainer {
-  position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
+  position: fixed;
+  /* Sit on top of the page content */
+  display: none;
+  /* Hidden by default */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.6); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Black background with opacity */
+  z-index: 2;
+  /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer;
+  /* Add a pointer on hover */
   background-image: url("https://hips.hearstapps.com/hmg-prod/images/breaking-bad-resumen-cinco-temporadas-1570700511.jpg");
   background-size: cover;
   background-attachment: fixed;
   overflow: scroll;
   background-size: cover;
   background-attachment: fixed;
- 
+
 }
-#calculoContainer > h2{
+
+#calculoContainer>h2 {
   color: rgb(64, 15, 25);
   text-align: center;
-  font-size:2.6rem;
+  font-size: 2.6rem;
   padding: 10px 10px;
   background-color: #b19e4c92;
-  position:static;
+  position: static;
   font-weight: bold;
 }
 
-.nombre, .signo, .elemento {
+.nombre,
+.signo,
+.elemento {
   margin: 10px;
   color: white;
   font-family: bold;
   font-size: 1.3em;
   padding: 7px;
-  display:flex;
+  display: flex;
   background-color: #2d2a1dbe;
   left: 39%;
   max-width: 20%;
@@ -226,8 +260,10 @@ main{
   box-shadow: 5px 5px 5px rgb(253, 252, 252);
 }
 
-.NombreCalculo, .SignoCalculo, .ElementoCalculo {
-   
+.NombreCalculo,
+.SignoCalculo,
+.ElementoCalculo {
+
   display: flex;
   font-family: bold;
   font-size: 1em;
@@ -240,102 +276,157 @@ main{
   align-items: center;
   text-align: center;
   margin: 10px;
-  position: relative; 
+  position: relative;
   box-shadow: 5px 5px 5px rgb(253, 252, 252);
 
 }
+
 audio {
   display: flex;
   font-family: bold;
   font-size: 0.5em;
   padding: 5px;
   border-radius: 5px;
-  max-width: 10%;
+  max-width: 13.5%;
   align-items: center;
   text-align: center;
-  left: 16%;
+  left: 20%;
   margin: 0;
-  position: relative; 
+  position: relative;
   background: #0c663f98;
   height: 30px;
   box-shadow: 5px 5px 5px rgb(253, 252, 252);
-  
+
 }
+
 #resultado {
-  position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
+  position: fixed;
+  /* Sit on top of the page content */
+  display: none;
+  /* Hidden by default */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Black background with opacity */
+  z-index: 2;
+  /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer;
+  /* Add a pointer on hover */
   background-image: url("Image/Imagenes/bb_walter-white-large.jpg");
-  background-size: 1400px;
+  background-size: 2150px;
 }
 
-span{
-  font-size:1.3rem; 
+span {
+  font-size: 1.3rem;
   font-weight: bold;
-  color:#f7f3e2;
+  color: #f7f3e2;
   background: rgba(7, 57, 13, 0.6);
   padding: 5px 10px;
   border-radius: 5px;
 }
+
+
 /* Media Queries para tabletas y celulares */
 @media screen and (max-width: 900px) {
   body {
-      background-size: 900px; /* Ajustar el fondo para que cubra toda la pantalla */
+    background-size: 900px;
+    /* Ajustar el fondo para que cubra toda la pantalla */
   }
+
   header {
-      padding: 5px; /* Reduce el padding en pantallas pequeñas */
-      font-size: 1.5rem; /* Reduce el tamaño de fuente en pantallas pequeñas */
-      color:rgb(0, 0, 0);
-      
+    padding: 5px;
+    /* Reduce el padding en pantallas pequeñas */
+    font-size: 1.5rem;
+    /* Reduce el tamaño de fuente en pantallas pequeñas */
+    color: rgb(0, 0, 0);
+
   }
-  nav{ 
+
+  nav {
     align-items: center;
     text-align: center;
     background-color: rgba(250, 235, 215, 0.531);
     max-width: 65%;
-    display:block;
-    position:relative;
+    display: block;
+    position: relative;
     left: 15%;
     padding: 2px;
-    }
+  }
 
   main {
-      grid-template-columns: 1fr 1fr 1fr; /* Cambia a 2 columnas en pantallas pequeñas */
-      gap: 50px; /* Reduce el espacio entre elementos en pantallas pequeñas */
-      padding: 50px; /* Reduce el padding en pantallas pequeñas */
+    grid-template-columns: 1fr 1fr 1fr;
+    /* Cambia a 2 columnas en pantallas pequeñas */
+    gap: 50px;
+    /* Reduce el espacio entre elementos en pantallas pequeñas */
+    padding: 50px;
+    /* Reduce el padding en pantallas pequeñas */
   }
 
-  .character-card > img {
+  .character-card>img {
     width: 100%;
-    height: 80%; /* Ajusta la altura de la imagen proporcionalmente */
+    height: 80%;
+    /* Ajusta la altura de la imagen proporcionalmente */
   }
-  .character-card > h3{
-    font-size:1rem;
+
+  .character-card>img:hover {
+    filter: none;
+    border: 3px solid #0c663f;
+    width: 100%;
+    height: 60%;
+  }
+
+  .character-card>h3 {
+    font-size: 1rem;
+
+  }
+
+  #resultado {
+    position: fixed;
+    /* Sit on top of the page content */
+    display: none;
+    /* Hidden by default */
+    width: 100%;
+    /* Full width (cover the whole page) */
+    height: 100%;
+    /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black background with opacity */
+    z-index: 2;
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    /* Add a pointer on hover */
+    background-image: url("Image/Imagenes/bb_walter-white-large.jpg");
+    background-size: 600px;
+    background-position: center;
+    /* Centra la imagen en el contenedor */
+    background-repeat: no-repeat
+  }
+
+  audio {
+    display: flex;
+    font-family: bold;
+    font-size: 0.5em;
+    padding: 5px;
+    border-radius: 5px;
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+    left: 20%;
+    margin: 0;
+    position: relative;
+    background: #0c663f98;
+    height: 30px;
+    box-shadow: 5px 5px 5px rgb(253, 252, 252);
   
-}
-#resultado {
-  position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
-  background-image: url("Image/Imagenes/bb_walter-white-large.jpg");
-  background-size: 600px;
-  background-position: center; /* Centra la imagen en el contenedor */
-  background-repeat: no-repeat
-}
+  }
 }
