@@ -1,4 +1,4 @@
-import { filtrar, ordenarAZ, ordenarZA, temporada, textoAASCII, encontrar } from "../src/data";
+import { ordenarAZ, ordenarZA, temporada, filtrar, textoAASCII, encontrar } from "../src/data";
 
 describe('ordenarAZ', () => {
   it('is a function', () => {

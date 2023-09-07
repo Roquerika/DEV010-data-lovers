@@ -1,83 +1,70 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <!-- <body onclick="PlayAudio()"> -->
- <body>
-    <header>
-      <img src="https://content.cpcache.com/popup/img/breakingbad-large-logo.png" alt="Logo Breaking Bad" width="600"
-      height="110">
-      <h1><b><em>"Let´s Cook"</em></b></h1>
-      </header>
 
-    <nav>
-      <div>
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <img src="https://content.cpcache.com/popup/img/breakingbad-large-logo.png" alt="Logo Breaking Bad" width="600"
+      height="110">
+    <h1><b><em>"Let´s Cook"</em></b></h1>
+  </header>
+
+  <nav>
+    <div>
 
       <button id="btnOrdenarAZ">Sort A-Z</button>
       <button id="btnOrdenarZA">Sort Z-A</button>
 
-        <label class="selector" for="selectorTemporada">Select your season</label>   
-        <select id="selectorTemporada">
-             <option value="1" id="temp1">Season 1</option>
-             <option value="2" id="temp2">Season 2</option>
-             <option value="3" id="temp3">Season 3</option>
-             <option value="4" id="temp4">Season 4</option>
-             <option value="4" id="temp5">Season 5</option>
-             <!--<option value="6" id="todasTemp">Todas las temporadas</option>-->
-           </select>
-           
-      <input type="text" class="Personaje" placeholder="Search character/actor/actress" id="busquedaPersonaje">  
+      <label class="selector" for="selectorTemporada">Select your season</label>
+      <select id="selectorTemporada">
+        <option value="1" id="temp1">Season 1</option>
+        <option value="2" id="temp2">Season 2</option>
+        <option value="3" id="temp3">Season 3</option>
+        <option value="4" id="temp4">Season 4</option>
+        <option value="4" id="temp5">Season 5</option>
+      </select>
+
+      <input type="text" class="Personaje" placeholder="Search character/actor/actress" id="busquedaPersonaje">
       <button class="btnBuscar" id="buscar">Search</button>
       <button id="Calculo">Which character are you?</button>
 
-      <audio id= "cancionBreakingBad" controls loop>
+      <audio id="cancionBreakingBad" controls loop>
         <source src="audio/Canción.mp3" type="audio/mpeg">
       </audio>
-      
+
       <div id="calculoContainer" class="calculoContainer">
         <h2><b><em>Which character are you?</em></b></h2>
-        <ul style="list-style: none;">
-        <li><label class= "nombre" for="nombre"><b>Name</b></label></li>
-        <input type="text" class="NombreCalculo" placeholder="" id="Nombre">
-        <br>
-        <li><label class= "signo" for="signo"><b>Zodiac sign</b></label></li>
-        <input type="text" class="SignoCalculo" placeholder="" id="Signo">
-        <br>
-        <li><label class= "elemento" for="elemento"><b>Favorite chemical element</b></label></li>
-        <input type="text" class="ElementoCalculo" placeholder="" id="Elemento">
-        <br>
-        <button class="btnProcesar" id="procesar">Process</button>
-        <div id="cartaContainer">
-          
-        <!-- <h2><em>Selected card:</em></h2> -->
-        <div id="cartaInfo">
-        <!-- Aquí se mostrarán los detalles de la carta -->
-        </div>
-        </div>
-      </ul>
-      </div>
-      <div>
-        <img>
+        <ul style="list-style: none;"> <!--<ul> Selector de atributo-->
+          <li><label class="nombre" for="nombre"><b>Name</b></label></li> <!-- <b> Selector de tipo/ etiqueta/elemento-->
+          <input type="text" class="NombreCalculo" placeholder="" id="Nombre">
+          <br>
+          <li><label class="signo" for="signo"><b>Zodiac sign</b></label></li>
+          <input type="text" class="SignoCalculo" placeholder="" id="Signo">
+          <br>
+          <li><label class="elemento" for="elemento"><b>Favorite chemical element</b></label></li>
+          <input type="text" class="ElementoCalculo" placeholder="" id="Elemento">
+          <br>
+          <button class="btnProcesar" id="procesar">Process</button>
+
+        </ul>
       </div>
 
       <div id="resultado" class="resultado"></div>
 
-      <!-- <input type="checkbox" class="checkbox" name="BetterCall"><span>Aparecen en Better Call Saul</span>
-      <div id="resultado"></div> -->
-      </div>     
-    </nav>
+    </div>
+  </nav>
+  
+  <main>
+    <!--<div class="card-container">-->
+  </main>
 
-    <main>
+  <div id="root"></div>
+  <script src="main.js" type="module"></script>
+</body>
 
-      <!--<div class="card-container">-->
-    <!-- <div id="error-container"> -->
-    </main>
-
-
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
-  </body>
 </html>
